@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="customersApp">  <!-- We create a custom module 'customersApp' as associate it with ng-app -->
+<head>
+	<meta charset="UTF-8">
+	<title>Iterating Over Data</title>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>  -->
+	<!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular-route.min.js"></script>  -->
+	<script type="text/javascript" src="scripts/angular.js"></script> 
+	<script type="text/javascript" src="scripts/angular-route.js"></script> 
+</head>
+<body >  <!-- You need to define the function name of the controller here, i.e. Reference Controller here   (If you are using Route to marry the view with the controller then there is no need to define the ng-controller )-->
+	
+	<div ng-view></div>  <!-- ng-view is used to display the view in the shell for the single page application  -->
+
+	
+	<script type="text/javascript" src="app/app.js"></script>
+	<script type="text/javascript" src="app/controllers/customersController.js"> </script>
+
+</body>
+</html>
