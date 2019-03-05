@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>Iterating Over Data</title>
+</head>
+<body >
+	
+	<h2>Customers</h2>
+	Filter: <input type="text" ng-model="customerFilter.name"/>  <!-- we are defining an object.property to filter the results from the input box  -->
+	<br>
+
+	<table>
+		<tr>
+			<td ng-click="doSort('name')">Name</td>  <!-- ng-click will allow us to track when it is been clicked -->
+			<td ng-click="doSort('city')">City</td>
+			<td ng-click="doSort('orderTotal')">Order Total</td>
+			<td ng-click="doSort('joined')">Joined</td>
+		</tr>
+		<tr ng-repeat="cust in customers | limitTo:4 | filter:customerFilter | orderBy:sortBy:reverse ">  <!-- limitTo:4 means limit to 4 customers -->
+			<td>{{cust.name | uppercase }}</td>
+			<td>{{cust.city | lowercase }}</td>
+			<td>{{cust.orderTotal | currency:'€'}}</td> 
+			<td>{{cust.joined | date:'yyyy-MM-dd'}}</td>  <!-- :'customize here'   -->
+		</tr>
+	</table>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+	<script type="text/javascript" src="app/controllers/customersController.js"> </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>  <!-- ng-app will mark as an angular-js application -->
+<head>
+	<meta charset="UTF-8">
+	<title>Using Directives</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+</head>
+<body ng-init="name='James'"> <!-- ng-init is a directive which allows the property name to be initialized with some data -->
+	<div ng-hide="isHidden">
+		Name: <input type="text" ng-model="name" />  {{name}}  <!-- This is Example of Data Binding, because both of them are pointing to the name property, There is no need to write JavaScript for it, this is a data oriented approach  -->
+		<!-- another way to write {{name}} is using <span ng-bind="name"></span>  -->
+	</div>
+	
+	Hide: <input type="checkbox" ng-model="isHidden" />
+    <br />
+    <button ng-click="name='Michelle'">Change Name</button>  <!-- When button is clicked ng-click intercepts that click event and name should now be changed to Michelle which should update the textbox and data-binding expression {{name}} -->
+
+
+</body>
+</html>
